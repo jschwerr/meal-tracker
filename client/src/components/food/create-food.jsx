@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 export default class CreateFood extends Component {
   constructor(props) {
@@ -50,6 +51,15 @@ export default class CreateFood extends Component {
     e.preventDefault();
 
     console.log(`Form submitted:`);
+    const newFood = {
+        food_name: this.state.food_name,
+        food_serving_size: this.state.food_serving_size,
+        food_serving_measure: this.state.food_serving_measure,
+        food_calories_per_serving: this.state.food_calories_per_serving
+    };
+
+    axios.post('/api/food/add', newFood)
+        .then(res => console.log(res.data));
 
     this.setState({
       food_name: "",
