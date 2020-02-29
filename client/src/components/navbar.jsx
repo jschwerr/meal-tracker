@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from '../logo.svg';
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function NavBar() {
   return(
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
+      <a className="navbar-brand" href="https://codingthesmartway.com" target="_blank">
         <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
       </a>
       <Link to="/" className="navbar-brand">Meal Tracker</Link>
