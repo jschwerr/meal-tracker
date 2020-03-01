@@ -25,7 +25,6 @@ export default class FoodList extends Component {
     axios
       .get("/api/food")
       .then(response => {
-        console.log(response);
         this.setState({ food: response.data });
       })
       .catch(err => err);
