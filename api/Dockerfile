@@ -12,4 +12,4 @@ COPY . .
 
 #Expose port and start application
 EXPOSE 9000
-CMD [ "node", "app.js" ]
+CMD [ "npm", "start" ]

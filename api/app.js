@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 var db = require('./db');
 
 // var indexRouter = require('./routes/index');
@@ -23,7 +24,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+// app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(db.DB, { useNewUrlParser: true });
 const connection = mongoose.connection;
